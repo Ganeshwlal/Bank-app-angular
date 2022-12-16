@@ -1,0 +1,56 @@
+
+<div id="nav" class="row ">
+    <div id="nav0" class="col-6 "><a href="#"><img class="p-1 ms-5 mb-2" src="../../assets/SBI-Logo.png" alt="" width="20%"></a></div>
+    <div id="nav1" class="col-6">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Loan</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Card</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+    </div>
+</div>
+
+<div id="body" class="container-fluid row">
+    <div class="col-3 m-4 border border-5  p-5">
+        <p style="font-size: small;">(CARE: Username and password are case sensitive.)</p>
+        
+        <form action="">
+            <label for="userlogin"><b>Username</b> </label>
+        <input (change)="acnoChange($event)" id="userlogin" type="text" class="form-control" [placeholder]="account">
+        <br>
+        <label for="userpass"><b>Password</b></label>
+        <input (change)="passChange($event)" id="userpass" type="password" placeholder="Password" class="form-control">
+        <br>
+        <label for="">Enter Captcha</label><br>
+        <input type="text" placeholder="Enter the text as shown in the image" size="10" > <img src="" alt="error">
+        <br><br>
+        <button type="button" class="btn btn-primary " (click)="login()">Login</button>
+
+    </form>
+    </div>
+
+    <div id="div2" class="col-3 m-4 border border-5  p-3">
+        <br><br><br>
+        <h6>{{aim}}</h6>
+        <br><br>
+
+        <a class="regis" href="./reg-bank.html">New User? Register here</a>
+
+        <br><br>
+        <a class="regis" href="">Forgot Username/Login Password</a>
+
+    </div>
+
+    <div id="div3" class="col-4 m-4 me-0">
+        <img src="https://retail.onlinesbi.sbi/sbijava/retail/images/login_img.png" alt="" width="450px" height="300px">
+        <img src="../../assets/sbi2.jpg" alt="" width="450px" height="150px">
+
+    </div>
+
+</div>
+
+
+
