@@ -33,13 +33,13 @@
         <form action="">
         <h6>- new user</h6>
             <br>
-        <input id="accnum" type="text" placeholder="Account Number" class="form-control"  size="45">
+        <input [(ngModel)]="acno1" name="acno"  id="accnum" type="text" placeholder="Account Number" class="form-control"  size="45">
             <br>
         <input id="name1" type="text" placeholder="Name" class="form-control" size="45">
             <br>
-        <input id="userinp" type="text" placeholder="Username" class="form-control"  size="45">
+        <input [(ngModel)]="uname1" name="uname" id="userinp" type="text" placeholder="Username" class="form-control"  size="45">
             <br>
-        <input id="userpsw" type="text" placeholder="Password" class="form-control">    
+        <input [(ngModel)]="pswd1" name="pswd" id="userpsw" type="text" placeholder="Password" class="form-control">    
     </form>
 
     </div>
@@ -47,9 +47,9 @@
 </div>
 <br>
 <div id="submit">
-<button class="btn btn-primary bt" type="button" onclick="register()">Register</button>
+<button class="btn btn-primary bt" type="button"  (click)="register()">Register</button>
 <br>
-<p>Already have an account? <a href="./bank-login.html">Sign in</a> </p>
+<p>Already have an account? <a routerLink="">Sign in</a> </p>
 <!-- <a href="">sign in</a> -->
 
 </div>

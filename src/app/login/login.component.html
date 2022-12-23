@@ -19,25 +19,51 @@
         
         <form action="">
             <label for="userlogin"><b>Username</b> </label>
-        <input (change)="acnoChange($event)" id="userlogin" type="text" class="form-control" [placeholder]="account">
+                                                                                                 <!-- Property Binding -->
+            <!-- <input (change)="acnoChange($event)" id="userlogin" type="text" class="form-control" [placeholder]="account"> -->
+                                                                                                 <!-- Property Binding -->
+        
+
+        <!-- <input #acno id="userlogin" type="text" class="form-control" [placeholder]="account"> -->
+
+
+        <input [(ngModel)]="acno2" name="acno" id="userlogin" type="text" class="form-control" [placeholder]="account">
+
         <br>
+
         <label for="userpass"><b>Password</b></label>
-        <input (change)="passChange($event)" id="userpass" type="password" placeholder="Password" class="form-control">
+        <!-- <input (change)="passChange($event)" id="userpass" type="password" placeholder="Password" class="form-control"> -->
+                <!-- Event Binding using $event  -->
+
+        <!-- <input #pswd  id="userpass" type="password" placeholder="Password" class="form-control"> -->
+                <!-- Event Binding using template referancing variable -->
+
+        <input [(ngModel)]="pswd2" name="pswd"  id="userpass" type="password" placeholder="Password" class="form-control">
+
+        
         <br>
         <label for="">Enter Captcha</label><br>
         <input type="text" placeholder="Enter the text as shown in the image" size="10" > <img src="" alt="error">
         <br><br>
-        <button type="button" class="btn btn-primary " (click)="login()">Login</button>
+        <!-- <button type="button" class="btn btn-primary " (click)="login()">Login</button> -->
+                                                        <!-- Event Binding -->
 
-    </form>
+         <!-- <button type="button" class="btn btn-primary " (click)="login(acno,pswd)">Login</button> -->
+                                                        <!-- Event Binding using template referancing variable -->
+    
+         <button type="button" class="btn btn-primary " (click)="login()">Login</button>
+
+
+        </form>
     </div>
 
     <div id="div2" class="col-3 m-4 border border-5  p-3">
         <br><br><br>
-        <h6>{{aim}}</h6>
+        <h6>{{aim}}</h6>  
+        <!-- String interpolation -->
         <br><br>
 
-        <a class="regis" href="./reg-bank.html">New User? Register here</a>
+        <a class="regis" routerLink="register">New User? Register here</a>
 
         <br><br>
         <a class="regis" href="">Forgot Username/Login Password</a>

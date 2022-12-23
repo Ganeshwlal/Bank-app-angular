@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{ //3rd execute
+export class LoginComponent implements OnInit{
+  acno2: any; //3rd execute
+  pswd2: any;
   //class is a collection of properties and methods.
 
-  constructor(){ //1st execute
+  constructor(private router:Router,private ds:DataService){
+ //1st execute
   //used for object initialization
   //it automatically invokes when an object is created
 
@@ -21,9 +26,9 @@ export class LoginComponent implements OnInit{ //3rd execute
   }
   //properties
 
-  aim='Your Perfect Banking Parter'
+  aim='Your Perfect Banking Parter'  //String interpolation
 
-  account="enter your username"
+  account="enter your username"     //Property Binding
 
   userDetails:any={
     1000:{acno:1000, username:'Ganesh W Lal', password:1000, balance:5000},
@@ -37,23 +42,53 @@ export class LoginComponent implements OnInit{ //3rd execute
   acno=''; //to hold the value from user
   pswd='';
 
-  login(){
+  //login(){                //Event Binding
     // alert('login clicked')
-    var acno=this.acno;
-    var pswd=this.pswd;
-    var userDetails=this.userDetails;
+    //var acno=this.acno;
+   // var pswd=this.pswd;
+    //var userDetails=this.userDetails;
 
-    if (acno in userDetails){
-      if(pswd==userDetails[acno]['password']){
-        alert('login successful')
-      }
-      else{
-        alert('incorrect password')
+   // login(a:any, p:any){      //Event Binding using template referancing variable
+      // alert('login clicked')
+    //  var acno=a.value;
+     // var pswd=p.value;
+     // var userDetails=this.userDetails;
 
-      }
+
+  //    login(){      //Two way binding
+  //     // alert('login clicked')
+  //     var acno1=this.acno2;
+  //     var pswd1=this.pswd2;
+  //     var userDetails=this.userDetails;
+
+      
+  //   if (acno1 in userDetails){
+  //     if(pswd1==userDetails[acno1]['password']){
+  //       alert('login successful')
+  //       this.router.navigateByUrl('dashboard')
+  //     }
+  //     else{
+  //       alert('incorrect password')
+
+  //     }
+  //   }
+  //   else{
+  //     alert('user not found')
+  //   }
+  // }
+
+  login(){
+    var acno=this.acno2;
+    var pswd=this.pswd2;
+
+    const result=this.ds.login(acno,pswd)
+    if(result){
+      alert('login success')
+      this.router.navigateByUrl('dashboard');
+
     }
     else{
-      alert('user not found')
+      alert('login failed')
     }
   }
 
@@ -70,10 +105,6 @@ export class LoginComponent implements OnInit{ //3rd execute
     this.pswd = event.target.value;
     console.log(this.pswd);
     
-    
   }
-
-
-
 
 }

@@ -1,0 +1,85 @@
+<!-- <div class="parent">
+    <div class="child">
+        <div class="col-2 ">
+            <form action="">
+            <h6>User Driven Registration</h6>
+            <br>
+            <label for="depo_accnum" class="form-control"><b>Account Number :</b> </label>
+            
+        
+            <br>
+            <label for="depo_userpsw" class="form-control"><b>New Password :</b></label>
+            <br>
+            <label for="depo_amt" class="form-control"><b>Name : </b> </label>
+            
+        </form>
+        </div>
+    
+        <div class="col-4">
+            <form action="">
+            <h6>- new user</h6>
+                <br>
+            <input [(ngModel)]="acno3" name="acno"  id="depo_accnum" type="text" placeholder="Account Number" class="form-control"  size="45">
+                
+                <br>
+
+            <input [(ngModel)]="pswd3" name="pswd" id="depo_userpsw" type="text" placeholder="Password" class="form-control">    
+            <br>
+            <input [(ngModel)]="amt3" id="depo_amt" type="text" placeholder="Amount" class="form-control" size="45">
+        </form>
+    
+        </div>
+        <br>
+        <div id="submit">
+            <button class="btn btn-primary bt" type="button"  (click)="Deposit()">Deposit</button>
+            <br>
+            
+            
+            </div>
+
+
+    </div>
+
+
+    <div class="child">
+
+    </div>
+</div> -->
+
+<div class="main">
+<div class="parent">
+    <div class="child" >
+        <div class="content1">
+            <div class="icon">
+                <img src="../../assets/82c811a3afd73c763d57fe8e80cc1777.png" alt=""><br>
+    
+            </div><br><br>
+            <label for=""class="txt" id="dep_acno">ACCOUNT NUMBER</label><br>
+            <input type="text"  [(ngModel)]="acno3" class="input" name="acno3"><br><br>
+            <label for=""class="txt"id="dep_pswd">PASSWORD</label><br>
+            <input type="password" [(ngModel)]="pswd3"class="input"><br><br>
+            <label for="" class="txt"id="dep_uname">AMOUNT</label><br>
+            <input type="text" [(ngModel)]="amount3" class="input"><br><br>
+            <button class="btn" (click)="deposit()">Deposit</button><br><br>
+    
+        </div>
+    </div>
+    <div class="child">
+        <div class="content2">
+            <div class="icon">
+                <img src="../../assets/82c811a3afd73c763d57fe8e80cc1777.png" alt=""><br>
+
+            </div><br><br>
+            <label for=""class="txt" id="with_acno">ACCOUNT NUMBER</label><br>
+            <input type="text"  [(ngModel)]="acno4" class="input"><br><br>
+            <label for=""class="txt"id="with_pswd">PASSWORD</label><br>
+            <input type="password" [(ngModel)]="pswd4"class="input"><br><br>
+            <label for="" class="txt"id="with_uname">AMOUNT</label><br>
+            <input type="text" [(ngModel)]="amount4" class="input"><br><br>
+            <button class="btn" (click)="withdraw()">Withdraw</button><br><br>
+    
+        </div>
+    </div>
+</div>
+</div>
+
